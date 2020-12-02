@@ -57,13 +57,13 @@ public class GameManager : MonoBehaviour {
     }
     void Update() {
         laserManager.Update();
-        Debug.Log(laserManager.laserControllers.Count);
     }
 }
 //Design patterns here:
 public class LaserManager {
     internal List<LaserController> laserControllers = new List<LaserController>();
-
+    uint points = 0;
+    public void AddPoint() { points++; }
     //Singleton creator
     #region Singleton
     private static LaserManager instance;
@@ -95,6 +95,10 @@ public class LaserManager {
     public void Update() {
         foreach (LaserController controller in laserControllers.ToArray()) {
             controller.Update();
+        }
+        if(points > 0) {
+            Debug.Log("Number of copies: " + points + " out of a maximum of " + GameManager.instance.MaxNumOfLasers);
+            points = 0;
         }
     }
     public void AttachController(LaserController controller) {

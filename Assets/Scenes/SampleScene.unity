@@ -168,7 +168,7 @@ PrefabInstance:
     - target: {fileID: 3728086970345519476, guid: dcbda78d369a7fd4b8c96001de7519a3,
         type: 3}
       propertyPath: copiesSpread
-      value: 4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3728086970345519476, guid: dcbda78d369a7fd4b8c96001de7519a3,
         type: 3}
@@ -176,6 +176,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3769386161783147686, guid: 31fda2f65af45b74aaecbeadca1320f9,
         type: 3}
+    - target: {fileID: 3728086970345519476, guid: dcbda78d369a7fd4b8c96001de7519a3,
+        type: 3}
+      propertyPath: maxNumOfLasers
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3728086970345519477, guid: dcbda78d369a7fd4b8c96001de7519a3,
         type: 3}
       propertyPath: m_LocalPosition.x

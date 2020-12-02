@@ -9,6 +9,7 @@ public class LaserController {
     GameObject lastCollision;
     private float timeAlive = 0f;
     public bool isClone = false;
+
     public LaserController() {
         gameManager = GameManager.instance;
         lastCollision = null;
@@ -34,6 +35,7 @@ public class LaserController {
         }
         timeAlive += Time.deltaTime;
         if (timeAlive >= gameManager.LaserLife) {
+            laserManager.AddPoint();
             DestroyInstance();
         }
 
@@ -54,7 +56,7 @@ public class LaserController {
     }
 
     private void Move() {
-        laser.gameObject.transform.Translate(direction * gameManager.LaserSpeed, Space.World);
+        laser.gameObject.transform.Translate(direction * gameManager.LaserSpeed * Time.deltaTime, Space.World);
     }
 
     //Because I use clone the life of the lasers stay the same for all copies from the same original shot
