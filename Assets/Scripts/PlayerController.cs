@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
         transform.Rotate(Vector3.up, mouseMovement.y, Space.World);
         transform.Rotate(Vector3.right, mouseMovement.x, Space.Self);
 
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+        if (Input.GetKeyDown(KeyCode.Mouse0) && laserManager.laserControllers.Count == 0) {
             laserManager.CreateLaser(transform.position - Vector3.up * 0.5f, transform.forward);
             Debug.Log("Shot laser!");
         }

@@ -38,7 +38,7 @@ public class GameManagerEditor : Editor
         }
         LaserSettings = EditorGUILayout.Foldout(LaserSettings, "Laser Settings");
         if (LaserSettings) {
-            laserSpeed.floatValue = EditorGUILayout.Slider("Laser Speed", laserSpeed.floatValue, 0.02f, 0.1f);
+            laserSpeed.floatValue = EditorGUILayout.Slider("Laser Speed", laserSpeed.floatValue, 2f, 10f);
             laserLife.floatValue = EditorGUILayout.Slider("Laser Life (Seconds)", laserLife.floatValue, 0f, 3f);
             maxNumOfLasers.intValue = EditorGUILayout.IntSlider("Max # of Lasers", maxNumOfLasers.intValue, 10, 40);
             collisionCopies.intValue = EditorGUILayout.IntSlider("# of Collision Copies", collisionCopies.intValue, 0, 5);
